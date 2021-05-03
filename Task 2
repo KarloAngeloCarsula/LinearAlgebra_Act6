@@ -67,7 +67,7 @@ def mat_operations(matrix1, matrix2):
         print(division)
 
     else:
-            print("Cannot perfrom operations due to unequal matrix size")
+            print("Error!")
 
 mat_operations(V1, V2)
 print("_______________________________________________")

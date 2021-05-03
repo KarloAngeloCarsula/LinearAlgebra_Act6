@@ -1,0 +1,79 @@
+import numpy as np
+
+V1 = np.array([[7, 4,  7], [6, 2, 4], [5, 1, 5]])
+V2 = np.array([[8, 4, 8], [7, 3, 4],[1, 2, 4]],)
+V3 = np.array([[5, 4, 5], [1, 5, 7]])
+V4 = 9
+V5 = 1
+
+def mat_operations(matrix1, matrix2):
+    if np.isscalar(matrix1) == True and np.isscalar(matrix2) == True:
+        print(matrix1, 'Is a scalar')
+        print(matrix2, 'Is a scalar')
+        print("_______________________________________________")
+
+    elif np.isscalar(matrix1) == True:
+        print(matrix1,'Is a scalar')
+        print("_______________________________________________")
+        if matrix2.size > 0:
+          is_square = True if matrix2.shape[0] == matrix2.shape[1] else False
+        print(f'Matrix:\n{matrix2}\n\nShape:\t{matrix2.shape}\nSize:\t{matrix2.size}\nRank:\t{matrix2.ndim}\nSquare: {is_square}\n')
+
+
+    elif np.isscalar(matrix2)==True:
+        print(matrix2,'Is a scalar')
+        print("_______________________________________________")
+        is_square = True if matrix1.shape[0] == matrix1.shape[1] else False
+        print(f'Matrix:\n{matrix1}\n\nShape:\t{matrix1.shape}\nSize:\t{matrix1.size}\nRank:\t{matrix1.ndim}\nSquare: {is_square}\n')
+
+
+    elif np.isscalar(matrix1) == False and np.isscalar(matrix2) == False:
+        if matrix1.size > 0 and matrix2.size > 0:
+          is_square = True if matrix1.shape[0] == matrix1.shape[1] else False
+        print(f'Matrix:\n{matrix1}\n\nShape:\t{matrix1.shape}\nSize:\t{matrix1.size}\nRank:\t{matrix1.ndim}\nSquare: {is_square}\n')
+
+        is_square = True if matrix2.shape[0] == matrix2.shape[1] else False
+        print(f'Matrix:\n{matrix2}\n\nShape:\t{matrix2.shape}\nSize:\t{matrix2.size}\nRank:\t{matrix2.ndim}\nSquare: {is_square}\n')
+
+
+    if np.isscalar(matrix1)==True:
+        addition = matrix1 + matrix2
+        substraction = matrix1 - matrix2
+        multiplication = matrix1 * matrix2
+        division = matrix1 // matrix2
+        print(addition)
+        print(substraction)
+        print(multiplication)
+        print(division)
+
+    elif np.isscalar(matrix2) == True:
+        addition = matrix1 + matrix2
+        substraction = matrix1 - matrix2
+        multiplication = matrix1 * matrix2
+        division = matrix1 // matrix2
+        print(addition)
+        print(substraction)
+        print(multiplication)
+        print(division)
+
+    elif matrix1.size == matrix2.size :
+        addition = matrix1 + matrix2
+        substraction = matrix1 - matrix2
+        multiplication = matrix1 * matrix2
+        division = matrix1 // matrix2
+        print(addition)
+        print(substraction)
+        print(multiplication)
+        print(division)
+
+    else:
+            print("Cannot perfrom operations due to unequal matrix size")
+
+mat_operations(V1, V2)
+print("_______________________________________________")
+mat_operations(V1,V3)
+print("_______________________________________________")
+mat_operations(V1,V4)
+print("_______________________________________________")
+mat_operations(V3,V5)
+print("_______________________________________________")

@@ -1,0 +1,45 @@
+import numpy as np
+
+V1 = np.array([[7, 4, 7], [6, 2, 4], [5, 1, 5]])
+V2 = np.array([[8, 4, 8], [7, 3, 4], [1, 2, 4]], )
+V3 = np.identity(5)
+V4 = np.ones([5, 5])
+V5 = np.zeros([4, 4])
+
+
+def describe_mat(matrix):
+    is_square = True if matrix.shape[0] == matrix.shape[1] else False
+    print(
+        f'Matrix:\n{matrix}\n\nShape:\t{matrix.shape}\nSize:\t{matrix.size}\nRank:\t{matrix.ndim}\nSquare: {is_square}\n')
+
+    Matrix = sum(matrix)
+    Matrices = sum(Matrix)
+    diag = np.diag(matrix)
+    result = 1
+    for x in diag:
+        result = result * x
+
+    if Matrices == 0:
+        print("This is a Zeros Matrix")
+
+
+    elif Matrices == matrix.size:
+        print("This is a Ones Matrix")
+
+
+    elif result == 1:
+        print("This is a Identity Matrix")
+
+    else:
+        print(" ")
+
+
+describe_mat(V1)
+print("________________________________________________________________"'\n')
+describe_mat(V2)
+print("________________________________________________________________"'\n')
+describe_mat(V3)
+print("________________________________________________________________"'\n')
+describe_mat(V4)
+print("________________________________________________________________"'\n')
+describe_mat(V5)
